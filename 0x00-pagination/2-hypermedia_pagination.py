@@ -58,8 +58,13 @@ class Server:
             end_index if end_index < len(self.__indexed_dataset) else None
 
         return {
-                'page_size': page_size,
-                'index': start_index,
-                'next_index': next_index,
-                'data': data_page
+                'page_size': len(data_page),
+                'page': start_index // page_size + 1,
+                'data': data_page,
+                'next_page': next_index // page_size + 1 if \
+                        next_index is not None else None,
+                'prev_page': start_index // page_size if \
+                        start_index > 0 else None,
+                'total_pages': math.ceil(
+                    len(self.__indexed_dataset) / page_size)
         }
