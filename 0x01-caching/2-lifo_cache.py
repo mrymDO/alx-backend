@@ -14,7 +14,8 @@ class LIFOCache(BaseCaching):
                 discarded_key = list(self.cache_data.keys())[-1]
                 del self.cache_data[discarded_key]
                 print(f"DISCARD: {discarded_key}")
-        self.cache_data.update({key: item})
+
+            self.cache_data.update({key: item})
 
     def get(self, key):
         """Get item by key"""
