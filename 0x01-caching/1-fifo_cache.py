@@ -9,12 +9,12 @@ class FIFOCache(BaseCaching):
 
     def put(self, key, item):
         """Add a new item"""
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            discarded_key = next(iter(self.cache_data))
-            del self.cache_data[discarded_key]
-            print(f"DISCARD: {discarded_key}")
-
-        self.cache_data.update({key: item})
+        if key is not None and item is not None:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                discarded_key = next(iter(self.cache_data))
+                del self.cache_data[discarded_key]
+                print(f"DISCARD: {discarded_key}")
+            self.cache_data.update({key: item})
 
     def get(self, key):
         """get item by key"""
