@@ -1,19 +1,29 @@
 #!/usr/bin/env python3
-"""LRU cache"""
+"""
+LRU cache
+"""
+
+from collections import deque
 
 from base_caching import BaseCaching
-from collections import deque
 
 
 class LRUCache(BaseCaching):
-    """LRU caching system"""
+    """
+    LRU caching system
+    """
+
     def __init__(self):
-        """initialization"""
+        """
+        initialization
+        """
         super().__init__()
         self.order = deque()
 
     def put(self, key, item):
-        """Add item in the cache"""
+        """
+        Add item in the cache
+        """
         if key is not None and item is not None:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 lru_key = self.order.pop()
@@ -23,7 +33,9 @@ class LRUCache(BaseCaching):
             self.cache_data.update({key: item})
 
     def get(self, key):
-        """get item by key"""
+        """
+        get item by key
+        """
         if key is not None and key in self.cache_data:
             self.order.remove(key)
             self.order.appendleft(key)
