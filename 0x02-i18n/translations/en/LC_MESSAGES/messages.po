@@ -14,9 +14,9 @@ msgstr ""
 "Generated-By: Babel 2.14.0\n"
 
 #: templates/index.html:1
-msgid "Welcome to Holberton"
-msgstr ""
+msgid "home_title"
+msgstr "Welcome to Holberton"
 
 #: templates/index.html:2
-msgid "Hello world!"
-msgstr ""
+msgid "home_header"
+msgstr "Hello world!"
