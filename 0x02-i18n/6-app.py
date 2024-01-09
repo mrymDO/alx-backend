@@ -28,7 +28,7 @@ users = {
 }
 
 
-def get_user(user_id):
+def get_user(user_id: int) -> dict:
     """
     Get user information based on user ID. returns dict or none
     """
