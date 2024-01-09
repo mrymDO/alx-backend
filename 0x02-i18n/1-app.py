@@ -9,7 +9,7 @@ babel = Babel(app)
 
 class Config:
     """config falsk babel"""
-    
+
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -26,4 +26,3 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
