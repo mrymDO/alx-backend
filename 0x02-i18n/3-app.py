@@ -30,10 +30,10 @@ def get_locale() -> str:
 def index():
     """index"""
     return render_template(
-            "3-index.html",
-            home_title=_('Welcome to Holberton'),
-            home_header=_('Hello world!')
-        )
+        "3-index.html",
+        home_title=_('Welcome to Holberton'),
+        home_header=_('Hello world!')
+    )
 
 
 if __name__ == '__main__':
